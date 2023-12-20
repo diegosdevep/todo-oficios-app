@@ -3,10 +3,12 @@ import theme from '../../../styles/theme';
 
 const BigCategory = ({ icon, color, borderColor, title, onPress }) => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={onPress}
-        activeOpacity={0.7}
+    <TouchableOpacity
+      style={styles.container}
+      onPress={onPress}
+      activeOpacity={0.7}
+    >
+      <View
         style={[
           styles.content,
           ,
@@ -17,15 +19,14 @@ const BigCategory = ({ icon, color, borderColor, title, onPress }) => {
         ]}
       >
         <Image source={icon} />
-      </TouchableOpacity>
+      </View>
       <Text style={styles.title}>{title}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'column',
     alignItems: 'center',
   },
   content: {
@@ -41,6 +42,7 @@ const styles = StyleSheet.create({
     fontFamily: theme.fonts.LatoBold,
     color: theme.colors.grey.grey600,
     marginTop: 4,
+    textAlign: 'center',
   },
 });
 export default BigCategory;

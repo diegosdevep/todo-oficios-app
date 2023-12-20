@@ -188,20 +188,6 @@ const categories = [
     color: '#FEA97F',
     icon: require('../../assets/icons/cord.png'),
   },
-  {
-    id: 28,
-    title: 'Lavado de Autos',
-    borderColor: '#E89366',
-    color: '#EBA580',
-    icon: require('../../assets/icons/cord.png'),
-  },
-  {
-    id: 29,
-    title: 'Ninguna de las anteriores',
-    borderColor: '#F7F7F7',
-    color: '#CCCCCC',
-    icon: require('../../assets/icons/cord.png'),
-  },
 ];
 
 export default categories;

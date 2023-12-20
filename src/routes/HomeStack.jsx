@@ -16,7 +16,7 @@ const HomeStack = () => {
       <Stack.Screen
         name={screen.home.allCategories}
         component={AllCategoriesScreen}
-        options={{ title: 'All Categories' }}
+        options={{ title: 'All Categories', headerShown: false }}
       />
     </Stack.Navigator>
   );

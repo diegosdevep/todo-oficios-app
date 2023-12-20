@@ -5,7 +5,7 @@ import theme from '../../../styles/theme';
 import { useState } from 'react';
 
 const Header = () => {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
 
   return (
     <LinearGradient
@@ -17,7 +17,7 @@ const Header = () => {
       style={styles.gradient}
     >
       {user ? (
-        <>
+        <View style={styles.content}>
           <View style={styles.box}>
             <Image
               source={require('../../../../assets/person04.png')}
@@ -36,7 +36,7 @@ const Header = () => {
           <View style={styles.box}>
             <Icon type='material-community' size={30} name='bell-outline' />
           </View>
-        </>
+        </View>
       ) : (
         <View style={styles.center}>
           <Image
@@ -52,15 +52,23 @@ const Header = () => {
 
 const styles = StyleSheet.create({
   gradient: {
-    height: 200,
+    height: 150,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  content: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 50,
   },
   center: {
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 50,
   },
   box: {
     marginHorizontal: 20,
