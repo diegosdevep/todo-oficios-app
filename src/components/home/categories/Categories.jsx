@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import BigCategory from './BigCategory';
+import categories from '../../../utils/categories';
 import theme from '../../../styles/theme';
 import { screen } from '../../../utils/screen';
-import categories from '../../../utils/categories';
 
 const Categories = () => {
   const navigation = useNavigation();
@@ -11,16 +11,18 @@ const Categories = () => {
   const firstRowCategories = categories.slice(0, 3);
   const secondRowCategories = categories.slice(3, 6);
 
-  const navigateToScreen = (category) => {
+  const goToCategories = (category) => {
     if (category.title === 'Mas') {
       navigation.navigate(screen.home.allCategories);
     } else {
-      console.log('detail pantalla', { categoryId: category.title });
+      navigation.navigate(screen.home.allUsersServices, {
+        categoryId: category.title,
+      });
     }
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.title}>Servicios</Text>
 
       <View style={styles.categoryContainer}>
@@ -31,7 +33,7 @@ const Categories = () => {
             color={category.color}
             icon={category.icon}
             title={category.title}
-            onPress={() => navigateToScreen(category)}
+            onPress={() => goToCategories(category)}
           />
         ))}
       </View>
@@ -44,7 +46,7 @@ const Categories = () => {
             color={category.color}
             icon={category.icon}
             title={category.title}
-            onPress={() => navigateToScreen(category)}
+            onPress={() => goToCategories(category)}
           />
         ))}
       </View>
@@ -53,6 +55,9 @@ const Categories = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    marginTop: 30,
+  },
   title: {
     fontSize: theme.fontSize.lg,
     fontFamily: theme.fonts.LatoBold,

@@ -1,17 +1,10 @@
 import React, { useEffect } from 'react';
-import {
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  View,
-  Platform,
-} from 'react-native';
-import { Icon } from 'react-native-elements';
+import { StyleSheet, View, Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import theme from '../styles/theme';
 
-const GradientHeader = ({ title }) => {
+const GradientHeader = ({ children }) => {
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -35,27 +28,14 @@ const GradientHeader = ({ title }) => {
       ]}
       style={styles.gradient}
     >
-      <View style={styles.goBack}>
-        <TouchableOpacity
-          activeOpacity={0.7}
-          onPress={() => navigation.goBack()}
-        >
-          <Icon
-            type='material-community'
-            name='arrow-left'
-            size={28}
-            color={theme.colors.grey.grey600}
-          />
-        </TouchableOpacity>
-        <Text style={styles.title}>{title}</Text>
-      </View>
+      <View style={styles.goBack}>{children}</View>
     </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
   gradient: {
-    height: 128,
+    height: 140,
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -65,7 +45,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 15,
     marginHorizontal: 10,
-    marginTop: Platform.OS === 'ios' ? 50 : 30,
+    marginTop: Platform.OS === 'ios' ? 20 : 10,
   },
   title: {
     fontSize: theme.fontSize.lg,

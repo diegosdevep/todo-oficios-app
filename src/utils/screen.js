@@ -2,6 +2,8 @@ const homeStack = {
   tab: 'HomeTab',
   home: 'Home',
   allCategories: 'All Categories',
+  allUsersServices: 'All Users Services',
+  userService: 'User Service',
 };
 const demandsStack = {
   tab: 'DemandsTab',

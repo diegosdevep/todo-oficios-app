@@ -68,6 +68,48 @@ const theme = {
     h2: 30,
     h1: 36,
   },
+  shadows: {
+    light: {
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 0.01,
+      },
+      shadowOpacity: 0.1,
+      shadowRadius: 1,
+      elevation: 3,
+    },
+    soft: {
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 1,
+      },
+      shadowOpacity: 0.15,
+      shadowRadius: 2,
+      elevation: 1,
+    },
+    medium: {
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 1,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 2.84,
+      elevation: 5,
+    },
+    strong: {
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 3,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5,
+    },
+  },
 
   loadFonts: loadFonts,
 };

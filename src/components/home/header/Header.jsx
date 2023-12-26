@@ -1,21 +1,14 @@
 import { Text, StyleSheet, Image, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { useState } from 'react';
 import { Icon } from 'react-native-elements';
 import theme from '../../../styles/theme';
-import { useState } from 'react';
+import GradientHeader from '../../../shared/GradientHeader';
 
 const Header = () => {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
 
   return (
-    <LinearGradient
-      colors={[
-        'rgba(240, 115, 36, 0.55)',
-        'rgba(240, 115, 36, 0.18)',
-        'rgba(240, 115, 36, 0.0)',
-      ]}
-      style={styles.gradient}
-    >
+    <GradientHeader>
       {user ? (
         <View style={styles.content}>
           <View style={styles.box}>
@@ -46,7 +39,7 @@ const Header = () => {
           <Text style={styles.title}>Todo Oficios</Text>
         </View>
       )}
-    </LinearGradient>
+    </GradientHeader>
   );
 };
 

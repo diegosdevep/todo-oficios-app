@@ -6,8 +6,8 @@ import Professionals from '../../../components/home/professionals/Professionals'
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
+      <Header />
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Header />
         <Categories />
         <Professionals />
       </ScrollView>
