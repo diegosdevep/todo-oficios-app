@@ -1,10 +1,10 @@
 import { View, StyleSheet, ScrollView, Text, Image } from 'react-native';
+import { Icon } from 'react-native-elements';
+import { SvgXml } from 'react-native-svg';
 import GradientHeader from '../../../shared/GradientHeader';
 import GoBackArrow from '../../../shared/GoBackArrow';
 import CardUserService from '../../../components/userService/cardUserService/CardUserService';
 import SmallCategory from '../../../components/home/categories/SmallCategory';
-import { Icon } from 'react-native-elements';
-import { SvgXml } from 'react-native-svg';
 import theme from '../../../styles/theme';
 
 const HardHatSvg = `
@@ -16,11 +16,10 @@ const HardHatSvg = `
 const UserServiceScreen = () => {
   return (
     <View style={styles.container}>
+      <GradientHeader>
+        <GoBackArrow title='Volver a Todos' />
+      </GradientHeader>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <GradientHeader>
-          <GoBackArrow title='Volver a Todos' />
-        </GradientHeader>
-
         <CardUserService />
 
         <View style={styles.habilityContainer}>
