@@ -8,6 +8,7 @@ const homeStack = {
 const demandsStack = {
   tab: 'DemandsTab',
   demand: 'Demand',
+  demandsDetails: 'DemandsDetails',
 };
 const accountStack = {
   tab: 'AccountTab',

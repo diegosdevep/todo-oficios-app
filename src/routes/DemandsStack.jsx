@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DemandsScreen from '../screens/demands/demands/DemandsScreen';
+import DemansDetailsScreen from '../screens/demands/demansDetails/DemansDetailsScreen';
 import { screen } from '../utils/screen';
-import DemandsScreen from '../screens/demands/DemandsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,6 +12,11 @@ const DemandsStack = () => {
         name={screen.demands.demand}
         component={DemandsScreen}
         options={{ title: 'Demandas' }}
+      />
+      <Stack.Screen
+        name={screen.demands.demandsDetails}
+        component={DemansDetailsScreen}
+        options={{ title: 'Demandas Details' }}
       />
     </Stack.Navigator>
   );

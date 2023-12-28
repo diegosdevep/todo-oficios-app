@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     fontFamily: theme.fonts.LatoBold,
   },
   card: {
-    width: 397,
+    width: '95%',
     height: 146,
     backgroundColor: theme.colors.white,
     borderRadius: 15,
@@ -110,7 +110,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'center',
     padding: 10,
-    ...theme.shadows.light,
+    marginVertical: 10,
+    ...theme.shadows.soft,
   },
   row: {
     flexDirection: 'row',

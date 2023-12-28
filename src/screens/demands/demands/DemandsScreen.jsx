@@ -7,17 +7,25 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Icon } from 'react-native-elements';
-import SmallCategory from '../../components/home/categories/SmallCategory';
-import GradientHeader from '../../shared/GradientHeader';
-import theme from '../../styles/theme';
+import { useNavigation } from '@react-navigation/native';
+import SmallCategory from '../../../components/home/categories/SmallCategory';
+import GradientHeader from '../../../shared/GradientHeader';
+import theme from '../../../styles/theme';
+import { screen } from '../../../utils/screen';
 
 const DemandsScreen = () => {
+  const navigation = useNavigation();
+
+  const goToDetails = () => {
+    navigation.navigate(screen.demands.demandsDetails);
+  };
+
   return (
     <View style={styles.container}>
       <GradientHeader>
         <View style={styles.logoBox}>
           <Image
-            source={require('../../../assets/brand.png')}
+            source={require('../../../../assets/brand.png')}
             style={styles.logo}
           />
           <Text style={styles.title}>Todo Oficios</Text>
@@ -25,7 +33,11 @@ const DemandsScreen = () => {
       </GradientHeader>
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        <TouchableOpacity style={styles.card} activeOpacity={0.7}>
+        <TouchableOpacity
+          style={styles.card}
+          activeOpacity={0.7}
+          onPress={goToDetails}
+        >
           <View>
             <View style={styles.dateContainer}>
               <Text style={styles.date}>12/06/2024 18:30</Text>
@@ -41,7 +53,7 @@ const DemandsScreen = () => {
               <View style={styles.row}>
                 <View style={styles.containerImg}>
                   <Image
-                    source={require('../../../assets/persona05.png')}
+                    source={require('../../../../assets/persona05.png')}
                     style={styles.img}
                   />
                 </View>
@@ -53,7 +65,7 @@ const DemandsScreen = () => {
                     <SmallCategory
                       borderColor={'#E89366'}
                       color={'#EBA580'}
-                      icon={require('../../../assets/icons/cord.png')}
+                      icon={require('../../../../assets/icons/cord.png')}
                     />
                   </View>
                 </View>
@@ -86,7 +98,7 @@ const DemandsScreen = () => {
                   >
                     <Image
                       style={styles.imgUsers}
-                      source={require('../../../assets/person04.png')}
+                      source={require('../../../../assets/person04.png')}
                     />
                   </View>
                   <View
@@ -99,7 +111,7 @@ const DemandsScreen = () => {
                   >
                     <Image
                       style={styles.imgUsers}
-                      source={require('../../../assets/persona05.png')}
+                      source={require('../../../../assets/persona05.png')}
                     />
                   </View>
                   <View
@@ -111,7 +123,7 @@ const DemandsScreen = () => {
                   >
                     <Image
                       style={styles.imgUsers}
-                      source={require('../../../assets/photo.png')}
+                      source={require('../../../../assets/photo.png')}
                     />
                   </View>
                   <Text style={styles.text}>
@@ -152,11 +164,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     width: '95%',
     alignSelf: 'center',
+    backgroundColor: theme.colors.white,
     borderRadius: 16,
-    borderColor: theme.colors.grey.grey300,
+    borderColor: theme.colors.grey.grey100,
     paddingVertical: 15,
     paddingHorizontal: 10,
     marginTop: 20,
+    ...theme.shadows.light,
   },
   dateContainer: {
     flexDirection: 'row',
@@ -207,8 +221,8 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   imgUsers: {
-    width: 38,
-    height: 38,
+    width: 24,
+    height: 24,
     borderRadius: 50,
     resizeMode: 'cover',
     alignSelf: 'center',
