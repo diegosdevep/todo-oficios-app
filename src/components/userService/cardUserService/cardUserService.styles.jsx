@@ -3,14 +3,13 @@ import theme from '../../../styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
-    width: '95%',
+    width: '100%',
     height: 167,
     alignSelf: 'center',
     backgroundColor: theme.colors.white,
     borderRadius: 10,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingRight: 10,
     paddingVertical: 15,
     ...theme.shadows.soft,
   },

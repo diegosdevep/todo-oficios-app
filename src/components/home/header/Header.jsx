@@ -1,8 +1,8 @@
-import { Text, StyleSheet, Image, View } from 'react-native';
 import { useState } from 'react';
+import { Text, Image, View } from 'react-native';
 import { Icon } from 'react-native-elements';
-import theme from '../../../styles/theme';
 import GradientHeader from '../../../shared/GradientHeader';
+import { styles } from './header.styles';
 
 const Header = () => {
   const [user, setUser] = useState(false);
@@ -42,50 +42,5 @@ const Header = () => {
     </GradientHeader>
   );
 };
-
-const styles = StyleSheet.create({
-  gradient: {
-    height: 150,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  content: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 50,
-  },
-  center: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 50,
-  },
-  box: {
-    marginHorizontal: 20,
-  },
-  user: {
-    width: 40,
-    height: 40,
-    resizeMode: 'contain',
-  },
-  logoBox: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  logo: {
-    width: 45,
-    height: 45,
-    resizeMode: 'contain',
-  },
-  title: {
-    fontSize: theme.fontSize.h3,
-    fontFamily: theme.fonts.PoppinsSemibold,
-    color: theme.colors.grey.grey800,
-  },
-});
 
 export default Header;

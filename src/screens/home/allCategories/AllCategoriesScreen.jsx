@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { View, FlatList } from 'react-native';
-import { Icon, SearchBar } from 'react-native-elements';
+import { SearchBar } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
-import BigCategory from '../../../components/home/categories/BigCategory';
 import GradientHeader from '../../../shared/GradientHeader';
 import GoBackArrow from '../../../shared/GoBackArrow';
+import CategoryButton from '../../../shared/CategoryButton';
 import categories from '../../../utils/categories';
-import theme from '../../../styles/theme';
 import { screen } from '../../../utils/screen';
 import { styles } from './allcategories.styles';
 
@@ -26,12 +25,13 @@ const AllCategoriesScreen = () => {
 
   const renderItem = ({ item }) => (
     <View style={styles.itemContainer}>
-      <BigCategory
+      <CategoryButton
         borderColor={item.borderColor}
         color={item.color}
         icon={item.icon}
         title={item.title}
         onPress={() => goToCategory(item)}
+        size={'big'}
       />
     </View>
   );

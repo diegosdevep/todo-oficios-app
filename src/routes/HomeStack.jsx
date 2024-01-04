@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from '../screens/home/home/HomeScreen';
+import HomeScreen from '../screens/home/home/home/HomeScreen';
 import AllCategoriesScreen from '../screens/home/allCategories/AllCategoriesScreen';
 import AllUsersServicesScreen from '../screens/home/allUsersServices/AllUsersServicesScreen';
 import UserServiceScreen from '../screens/home/userService/UserServiceScreen';
