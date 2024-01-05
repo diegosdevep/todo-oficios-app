@@ -13,6 +13,7 @@ const demandsStack = {
 const accountStack = {
   tab: 'AccountTab',
   account: 'Account',
+  myDemands: 'My Demands',
 };
 const authStack = {
   auth: 'Auth',
